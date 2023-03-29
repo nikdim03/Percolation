@@ -53,7 +53,7 @@ class GridVisualizer(
     private fun paintGrid(g: Graphics) {
         for (row in grid.indices) {
             for (col in grid[row].indices) {
-                g.color = if (grid[row][col]) Color.BLACK else Color.WHITE
+                g.color = if (grid[row][col]) Color.WHITE else Color.BLACK
                 g.fillRect(col * cellSize + padding, row * cellSize + padding, cellSize, cellSize)
             }
         }
@@ -69,6 +69,7 @@ class GridVisualizer(
 
     private fun updateInfoLabel() {
         val whiteSquares = path.subList(0, pathLength).count { grid[it.row][it.col] }
-        infoLabel.text = "Filling percentage: $fillPercentage%\nPath length: $pathLength\nNumber of white squares: $whiteSquares"
+        infoLabel.text =
+            "Filling percentage: $fillPercentage%\nPath length: $pathLength\nNumber of white squares: $whiteSquares"
     }
 }

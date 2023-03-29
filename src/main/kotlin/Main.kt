@@ -13,9 +13,9 @@ fun main() {
         println("Path length: ${path.size}")
         println("Number of white squares: ${path.count { grid[it.row][it.col] }}")
 //        printGridWithPath(grid, path)
-//        println()
         GridVisualizer(grid, path, gridSize, percentage).display()
         Thread.sleep(2000)
+        println()
     }
 }
 
@@ -23,7 +23,7 @@ fun generateGrid(gridSize: Int, fillPercentage: Int): Array<Array<Boolean>> {
     val grid = Array(gridSize) { Array(gridSize) { false } }
     for (row in grid.indices) {
         for (col in grid[row].indices) {
-            grid[row][col] = Random.nextInt(100) < fillPercentage
+            grid[row][col] = Random.nextInt(100) > fillPercentage
         }
     }
     return grid
@@ -109,8 +109,8 @@ fun printGridWithPath(grid: Array<Array<Boolean>>, path: List<Cell>) {
             when {
                 path.contains(cell) && grid[row][col] -> print("🟥")
                 path.contains(cell) && !grid[row][col] -> print("🟪")
-                grid[row][col] -> print("⬛")
-                else -> print("⬜")
+                grid[row][col] -> print("⬜")
+                else -> print("⬛")
             }
         }
         println()
