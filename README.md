@@ -4,7 +4,10 @@ This project is a Kotlin implementation of percolation simulation using the modi
 
 ## Usage
 To open and run the project, follow these steps:
-- Download or clone the project `git clone https://github.com/nikdim03/Percolation.git`
+- Download or clone the project
+```
+git clone https://github.com/nikdim03/Percolation.git
+```
 - Open the project in IntelliJ IDEA or your preferred IDE
 - Choose filling percentages and the grid size
 - Run the `Main.kt` file
